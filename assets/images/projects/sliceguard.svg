@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+<title>PN-03 sliceguard pipeline</title>
+<desc>Blueprint schematic: generator feeds slice enumeration, stats, Benjamini-Hochberg and verdicts; a naive raw-gap ranking runs alongside and both feed demo.py.</desc>
+<defs>
+<pattern id="mn" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#EAF3FB" stroke-opacity="0.05" stroke-width="1"/></pattern>
+<pattern id="mj" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#EAF3FB" stroke-opacity="0.09" stroke-width="1"/></pattern>
+<marker id="a" viewBox="0 0 6 6" refX="6" refY="3" markerWidth="6" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L6 3L0 6z" fill="#EAF3FB" fill-opacity="0.8"/></marker>
+<marker id="k" viewBox="0 0 6 6" refX="6" refY="3" markerWidth="6" markerHeight="6" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L6 3L0 6z" fill="#9FDBFF"/></marker>
+<style>
+text{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;font-size:9px;letter-spacing:0.06em;fill:#EAF3FB;text-transform:uppercase}
+.t{font-weight:700}
+.s{fill-opacity:0.7}
+.m{text-anchor:middle}
+.b{fill:none;stroke:#EAF3FB;stroke-opacity:0.7;stroke-width:1}
+.k{fill:none;stroke:#9FDBFF;stroke-width:1}
+.l{fill:none;stroke:#EAF3FB;stroke-opacity:0.6;stroke-width:1}
+.n{font-size:11px;fill:#9FDBFF;font-weight:700}
+</style>
+</defs>
+<rect width="640" height="360" fill="#0D3B66"/>
+<rect width="640" height="360" fill="url(#mn)"/>
+<rect width="640" height="360" fill="url(#mj)"/>
+
+<rect class="b" x="16" y="16" width="608" height="20"/>
+<text x="24" y="29" style="font-size:10px">PN-03 · SLICEGUARD · FAIRNESS SLICE AUDIT PIPELINE</text>
+
+<rect class="k" x="16" y="64" width="108" height="64"/>
+<text class="t m" x="70" y="82">GENERATOR.PY</text>
+<text class="s m" x="70" y="96">SYNTHETIC</text>
+<text class="s m" x="70" y="108">RECORDS +</text>
+<text class="s m" x="70" y="120">PLANTED TRUTH</text>
+
+<rect class="k" x="141" y="64" width="108" height="64"/>
+<text class="t m" x="195" y="82">ENUMERATE_SLICES</text>
+<text class="s m" x="195" y="98">MIN-SIZE FLOOR</text>
+<text class="s m" x="195" y="110">SLICE VS REST</text>
+
+<rect class="k" x="266" y="64" width="108" height="64"/>
+<text class="t m" x="320" y="82">STATS.PY</text>
+<text class="s m" x="320" y="96">WILSON</text>
+<text class="s m" x="320" y="108">NEWCOMBE</text>
+<text class="s m" x="320" y="120">MDE</text>
+
+<rect class="k" x="391" y="64" width="108" height="64"/>
+<text class="t m" x="445" y="82">BH CORRECTION</text>
+<text class="s m" x="445" y="96">BENJAMINI-</text>
+<text class="s m" x="445" y="108">HOCHBERG</text>
+<text class="s m" x="445" y="120">ONE FAMILY</text>
+
+<rect class="k" x="516" y="64" width="108" height="64"/>
+<text class="t m" x="570" y="82">VERDICTS</text>
+<text class="s m" x="570" y="98">PER-SLICE</text>
+<text class="s m" x="570" y="110">THREE OUTCOMES</text>
+
+<path class="k" d="M124 96H140" marker-end="url(#k)"/>
+<path class="k" d="M249 96H265" marker-end="url(#k)"/>
+<path class="k" d="M374 96H390" marker-end="url(#k)"/>
+<path class="k" d="M499 96H515" marker-end="url(#k)"/>
+
+<path class="k" d="M570 128V168" marker-end="url(#k)"/>
+<path class="k" d="M570 148H312V168" marker-end="url(#k)"/>
+<path class="k" d="M434 148V168" marker-end="url(#k)"/>
+<rect class="k" x="272" y="168" width="80" height="22"/>
+<text class="m" x="312" y="182">DISPARITY</text>
+<rect class="b" x="364" y="168" width="140" height="22"/>
+<text class="m" x="434" y="182">NO_MATERIAL_DISPARITY</text>
+<rect class="b" x="516" y="168" width="108" height="22"/>
+<text class="m" x="570" y="182">INDETERMINATE</text>
+
+<path class="l" d="M312 190V212H570V190"/>
+<path class="k" d="M434 212V254" marker-end="url(#k)"/>
+
+<path class="l" d="M195 128V168" marker-end="url(#a)"/>
+<rect class="b" x="141" y="168" width="108" height="64" stroke-dasharray="4 3"/>
+<text class="t m" x="195" y="186">NAIVE_RANKING</text>
+<text class="s m" x="195" y="200">RAW GAP SORT</text>
+<text class="s m" x="195" y="212">BASELINE FOR</text>
+<text class="s m" x="195" y="224">COMPARISON</text>
+<path class="l" d="M195 232V282H359" marker-end="url(#a)"/>
+
+<rect class="k" x="360" y="254" width="148" height="56"/>
+<text class="t m" x="434" y="270">DEMO.PY</text>
+<text class="s m" x="434" y="284">SIDE-BY-SIDE REPORT</text>
+<text class="s m" x="434" y="297">GENERIC VS GUARDED</text>
+
+<text class="s" x="16" y="166">KEY NUMBERS</text>
+<rect class="b" x="16" y="176" width="108" height="28"/>
+<text class="n" x="24" y="188">6,000</text>
+<text class="s" x="24" y="199">EVALUATIONS</text>
+<rect class="b" x="16" y="212" width="108" height="28"/>
+<text class="n" x="24" y="224">Q = 0.05</text>
+<text class="s" x="24" y="235">BH FDR TARGET</text>
+<rect class="b" x="16" y="248" width="108" height="28"/>
+<text class="n" x="24" y="260">N = 10</text>
+<text class="s" x="24" y="271">MIN SLICE FLOOR</text>
+
+<text class="s" x="16" y="344">RANKED BY CI LOWER BOUND · TESTED AS ONE FAMILY</text>
+</svg>

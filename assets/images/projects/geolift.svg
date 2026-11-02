@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+<title>PN-07 geolift: synthetic-control lift pipeline</title>
+<desc>Flow from the generator to a Panel, then fit_synthetic_control and a pre-period RMSE gate. A failed gate raises PoorPreFit. A passed gate leads to estimate_lift, placebo_inference, and a p-value with interval. A naive_pre_post baseline runs alongside.</desc>
+<defs>
+<pattern id="mn" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#EAF3FB" stroke-opacity="0.05" stroke-width="1"/></pattern>
+<pattern id="mj" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#EAF3FB" stroke-opacity="0.09" stroke-width="1"/></pattern>
+<marker id="aw" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8z" fill="#EAF3FB" fill-opacity="0.8"/></marker>
+<marker id="aa" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L8 4L0 8z" fill="#9FDBFF"/></marker>
+<style>
+text{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;font-size:9px;letter-spacing:0.06em;fill:#EAF3FB;text-anchor:middle}
+.t{font-size:10px}
+.s{fill-opacity:0.7}
+.v{font-size:11px;fill:#9FDBFF}
+.l{text-anchor:start}
+.b{fill:#0D3B66;stroke:#EAF3FB;stroke-opacity:0.7;stroke-width:1}
+.k{fill:#0D3B66;stroke:#9FDBFF;stroke-opacity:0.9;stroke-width:1}
+.w{stroke:#EAF3FB;stroke-opacity:0.8;stroke-width:1;fill:none}
+.a{stroke:#9FDBFF;stroke-width:1;fill:none}
+</style>
+</defs>
+<rect width="640" height="360" fill="#0D3B66"/>
+<rect width="640" height="360" fill="url(#mn)"/>
+<rect width="640" height="360" fill="url(#mj)"/>
+
+<rect x="16" y="16" width="608" height="20" class="b"/>
+<text x="24" y="30" class="l t">PN-07 · GEOLIFT · SYNTHETIC-CONTROL LIFT PIPELINE</text>
+
+<rect x="16" y="60" width="104" height="52" class="b"/>
+<text x="68" y="78" class="t">GENERATOR</text>
+<text x="68" y="91" class="s">PLANTED LIFT</text>
+<text x="68" y="102" class="s">SEASON + TRENDS</text>
+
+<rect x="144" y="60" width="64" height="52" class="b"/>
+<text x="176" y="82" class="t">PANEL</text>
+<text x="176" y="96" class="s">REGION×WK</text>
+
+<rect x="232" y="60" width="150" height="52" class="k"/>
+<text x="307" y="82" class="t">FIT_SYNTHETIC_CONTROL</text>
+<text x="307" y="96" class="s">FISTA ON SIMPLEX</text>
+
+<polygon points="460,54 514,86 460,118 406,86" class="k"/>
+<text x="460" y="84" class="t">PRE-FIT</text>
+<text x="460" y="96" class="t">RMSE OK?</text>
+
+<rect x="538" y="60" width="86" height="52" class="b"/>
+<text x="581" y="82" class="t">POORPREFIT</text>
+<text x="581" y="96" class="s">RAISES</text>
+
+<rect x="96" y="152" width="112" height="48" class="b"/>
+<text x="152" y="172" class="t">NAIVE_PRE_POST</text>
+<text x="152" y="186" class="s">BASELINE</text>
+
+<rect x="396" y="152" width="128" height="48" class="k"/>
+<text x="460" y="172" class="t">ESTIMATE_LIFT</text>
+<text x="460" y="186" class="s">LIFT + DETECT FLOOR</text>
+
+<rect x="236" y="152" width="136" height="48" class="k"/>
+<text x="304" y="172" class="t">PLACEBO_INFERENCE</text>
+<text x="304" y="186" class="s">REFIT PER DONOR</text>
+
+<rect x="226" y="236" width="156" height="48" class="k"/>
+<text x="304" y="256" class="t">P-VALUE + INTERVAL</text>
+<text x="304" y="270" class="s">PLACEBO DISTRIBUTION</text>
+
+<line x1="120" y1="86" x2="144" y2="86" class="a" marker-end="url(#aa)"/>
+<line x1="208" y1="86" x2="232" y2="86" class="a" marker-end="url(#aa)"/>
+<line x1="382" y1="86" x2="406" y2="86" class="a" marker-end="url(#aa)"/>
+<line x1="514" y1="86" x2="538" y2="86" class="w" marker-end="url(#aw)"/>
+<text x="526" y="78">NO</text>
+<line x1="460" y1="118" x2="460" y2="152" class="a" marker-end="url(#aa)"/>
+<text x="468" y="139" class="l">YES</text>
+<line x1="396" y1="176" x2="372" y2="176" class="a" marker-end="url(#aa)"/>
+<line x1="304" y1="200" x2="304" y2="236" class="a" marker-end="url(#aa)"/>
+<line x1="176" y1="112" x2="176" y2="152" class="w" stroke-dasharray="4 3" marker-end="url(#aw)"/>
+<text x="184" y="136" class="l s">BASELINE</text>
+
+<line x1="16" y1="248" x2="40" y2="248" class="a"/>
+<text x="46" y="251" class="l s">KEY PATH</text>
+<line x1="16" y1="264" x2="40" y2="264" class="w" stroke-dasharray="4 3"/>
+<text x="46" y="267" class="l s">BASELINE, ALONGSIDE</text>
+
+<text x="412" y="248" class="l s">FAIL CLOSED:</text>
+<text x="412" y="262" class="l s">NO LIFT NUMBER ON A POOR FIT</text>
+
+<rect x="16" y="304" width="190" height="32" class="b"/>
+<text x="111" y="316" class="s">PRE-PERIOD RMSE GATE</text>
+<text x="111" y="330" class="v">5.5% OF SCALE</text>
+
+<rect x="225" y="304" width="190" height="32" class="b"/>
+<text x="320" y="316" class="s">ESTIMATED LIFT</text>
+<text x="320" y="330" class="v">+4.28%</text>
+
+<rect x="434" y="304" width="190" height="32" class="b"/>
+<text x="529" y="316" class="s">PLACEBO P-VALUE</text>
+<text x="529" y="330" class="v">P = 0.062</text>
+</svg>

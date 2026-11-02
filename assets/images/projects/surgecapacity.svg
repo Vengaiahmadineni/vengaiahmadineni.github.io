@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+<title>PN-09 surgecapacity schematic</title>
+<desc>Blueprint of the surgecapacity pipeline. An arrival profile feeds an arrival generator, then a simulation loop driven by a 168-hour roster, then results and the demo report. An analytic M/M/c module checks the simulator.</desc>
+<defs>
+<pattern id="mn" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#EAF3FB" stroke-opacity="0.05" stroke-width="1"/></pattern>
+<pattern id="mj" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#EAF3FB" stroke-opacity="0.09" stroke-width="1"/></pattern>
+<marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#9FDBFF"/></marker>
+<marker id="al" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#EAF3FB" fill-opacity="0.8"/></marker>
+<style>
+text{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;letter-spacing:0.06em;text-transform:uppercase;fill:#EAF3FB}
+.t{font-size:10px;text-anchor:middle}
+.s{font-size:9px;text-anchor:middle;opacity:0.7}
+.l{font-size:9px;opacity:0.7}
+.v{font-size:11px;text-anchor:middle;fill:#9FDBFF}
+.b{fill:#0D3B66;stroke:#EAF3FB;stroke-opacity:0.7;stroke-width:1}
+.k{fill:#0D3B66;stroke:#9FDBFF;stroke-width:1}
+</style>
+</defs>
+<rect width="640" height="360" fill="#0D3B66"/>
+<rect width="640" height="360" fill="url(#mn)"/>
+<rect width="640" height="360" fill="url(#mj)"/>
+
+<rect x="16" y="12" width="608" height="22" fill="none" stroke="#EAF3FB" stroke-opacity="0.6"/>
+<text x="24" y="27" style="font-size:10px">PN-09 · SURGECAPACITY · ED STAFFING SIMULATOR</text>
+<text x="616" y="27" style="font-size:9px;text-anchor:end;opacity:0.7">SCHEMATIC</text>
+
+<text class="l" x="16" y="74">STAFFING TO THE MEAN</text>
+<text class="l" x="16" y="88">GUARANTEES FAILURE</text>
+
+<rect class="b" x="336" y="48" width="128" height="60"/>
+<text class="t" x="400" y="68">Roster</text>
+<text class="s" x="400" y="84">168 hourly levels</text>
+<text class="s" x="400" y="96">1 per hour of week</text>
+
+<rect class="b" x="16" y="136" width="128" height="60"/>
+<text class="t" x="80" y="156">Arrival profile</text>
+<text class="s" x="80" y="172">hour of day</text>
+<text class="s" x="80" y="184">x day of week</text>
+
+<rect class="b" x="176" y="136" width="128" height="60"/>
+<text class="t" x="240" y="156">Arrival generator</text>
+<text class="s" x="240" y="172">thinned Poisson</text>
+<text class="s" x="240" y="184">triage mix</text>
+
+<rect class="k" x="336" y="136" width="128" height="60"/>
+<text class="t" x="400" y="156">Simulation loop</text>
+<text class="s" x="400" y="172">priority queue</text>
+<text class="s" x="400" y="184">hourly capacity</text>
+
+<rect class="b" x="496" y="136" width="128" height="60"/>
+<text class="t" x="560" y="156">Results</text>
+<text class="s" x="560" y="172">waits · breach rate</text>
+<text class="s" x="560" y="184">LWBS</text>
+
+<rect class="b" x="496" y="224" width="128" height="60"/>
+<text class="t" x="560" y="244">Demo report</text>
+<text class="s" x="560" y="260">src/demo.py</text>
+<text class="s" x="560" y="272">roster comparison</text>
+
+<rect class="b" x="336" y="224" width="128" height="60"/>
+<text class="t" x="400" y="244">Analytic M/M/c</text>
+<text class="s" x="400" y="260">Erlang C quantiles</text>
+<text class="s" x="400" y="272">src/validate.py</text>
+
+<g fill="none" stroke-width="1">
+<line x1="144" y1="166" x2="174" y2="166" stroke="#9FDBFF" marker-end="url(#ah)"/>
+<line x1="304" y1="166" x2="334" y2="166" stroke="#9FDBFF" marker-end="url(#ah)"/>
+<line x1="464" y1="166" x2="494" y2="166" stroke="#9FDBFF" marker-end="url(#ah)"/>
+<line x1="560" y1="196" x2="560" y2="222" stroke="#9FDBFF" marker-end="url(#ah)"/>
+<line x1="400" y1="108" x2="400" y2="134" stroke="#EAF3FB" stroke-opacity="0.8" marker-end="url(#al)"/>
+<line x1="400" y1="224" x2="400" y2="198" stroke="#EAF3FB" stroke-opacity="0.8" stroke-dasharray="4 3" marker-end="url(#al)"/>
+</g>
+<text class="l" x="408" y="214">checks</text>
+
+<line x1="28" y1="244" x2="56" y2="244" stroke="#9FDBFF" stroke-width="1"/>
+<text class="l" x="66" y="247">key path</text>
+<line x1="28" y1="262" x2="56" y2="262" stroke="#EAF3FB" stroke-opacity="0.8" stroke-dasharray="4 3"/>
+<text class="l" x="66" y="265">validation check</text>
+<text class="l" x="28" y="280">fixed seed = same run</text>
+
+<rect class="k" x="16" y="306" width="192" height="38"/>
+<text class="s" x="112" y="320">Roster budget</text>
+<text class="v" x="112" y="337">1,512 clin-h / week</text>
+
+<rect class="k" x="224" y="306" width="192" height="38"/>
+<text class="s" x="320" y="320">p95 wait · flat vs shaped</text>
+<text class="v" x="320" y="337">4.42h → 2.05h</text>
+
+<rect class="k" x="432" y="306" width="192" height="38"/>
+<text class="s" x="528" y="320">Breach under +25% surge</text>
+<text class="v" x="528" y="337">6.4% → 14.9%</text>
+</svg>

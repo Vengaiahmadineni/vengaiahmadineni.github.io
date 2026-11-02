@@ -1,0 +1,249 @@
+{
+  "projects": [
+    {
+      "name": "pointintime",
+      "category": "ML infrastructure",
+      "description": "A bitemporal feature store in which point-in-time correctness is enforced by the read API. A static leakage detector quarantines a deliberately planted future-leaking feature, and a train/serve skew check compares offline and online values.",
+      "highlights": [
+        "A naive latest-value join scores 0.912 AUC offline against 0.654 on production inputs; honest point-in-time features score 0.701",
+        "Knowledge-time watermark gives 0 / 40000 skew mismatches versus 3492 (8.73%) for the event-time bug",
+        "59 tests covering the store, detector, registry gate and materialiser"
+      ],
+      "technologies": [
+        "Python",
+        "SQLite",
+        "Logistic Regression",
+        "Feature Engineering",
+        "unittest",
+        "GitHub Actions"
+      ],
+      "links": {
+        "source": "https://github.com/Vengaiahmadineni/pointintime"
+      },
+      "image": "assets/images/projects/pointintime.svg",
+      "hero": {
+        "src": "assets/images/projects/pointintime-hero.jpg",
+        "alt": "pointintime — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "labelbudget",
+      "category": "Active learning",
+      "description": "An active-learning benchmark that reports labels needed to reach a target accuracy, with variance across many seeds and a prominent random-sampling baseline. A comparison guard refuses to declare a winner the evidence does not support.",
+      "highlights": [
+        "Shows one seed claiming uncertainty sampling is 4.2x better while another shows random 2.1x better",
+        "Paired bootstrap CI and exact sign test over 30 seeds; no comparative claim below 10 seeds",
+        "Converts label budgets into cost at $90/hour and 6 min/label"
+      ],
+      "technologies": [
+        "Python",
+        "Logistic Regression",
+        "Bootstrap Statistics",
+        "Active Learning",
+        "unittest",
+        "GitHub Actions"
+      ],
+      "links": {
+        "source": "https://github.com/Vengaiahmadineni/labelbudget"
+      },
+      "image": "assets/images/projects/labelbudget.svg",
+      "hero": {
+        "src": "assets/images/projects/labelbudget-hero.jpg",
+        "alt": "labelbudget — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "sliceguard",
+      "category": "Model fairness",
+      "description": "A fairness slice auditor that puts Wilson and Newcombe intervals on every slice, applies Benjamini-Hochberg correction and reports a minimum detectable effect, so tiny slices stop producing false alarms.",
+      "highlights": [
+        "Audits 6,000 synthetic underwriting-model evaluations with two planted 9-point disparities",
+        "A 19-person slice topping the raw-gap ranking is correctly marked INDETERMINATE",
+        "Ranks slices by the lower bound of the gap interval at a default q = 0.05"
+      ],
+      "technologies": [
+        "Python",
+        "Statistical Testing",
+        "Wilson Intervals",
+        "Benjamini-Hochberg",
+        "unittest",
+        "GitHub Actions"
+      ],
+      "links": {
+        "source": "https://github.com/Vengaiahmadineni/sliceguard"
+      },
+      "image": "assets/images/projects/sliceguard.svg",
+      "hero": {
+        "src": "assets/images/projects/sliceguard-hero.jpg",
+        "alt": "sliceguard — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "fieldvoice",
+      "category": "Speech evaluation",
+      "description": "An offline speech-to-structured-report pipeline evaluated on entity error rate rather than word error rate, with catalogue-constrained decoding that snaps part numbers and fault codes or routes them to a human.",
+      "highlights": [
+        "Demonstrates a ranking flip: WER 0.192 vs 0.231 prefers System A, entity error rate 0.833 vs 0.000 prefers System B",
+        "Typed extraction of part IDs, fault codes, quantities with units, dates and locations",
+        "80 tests, including a check that the pipeline runs with networking disabled"
+      ],
+      "technologies": [
+        "Python",
+        "Levenshtein Alignment",
+        "Entity Extraction",
+        "Constrained Decoding",
+        "unittest",
+        "GitHub Actions"
+      ],
+      "links": {
+        "source": "https://github.com/Vengaiahmadineni/fieldvoice"
+      },
+      "image": "assets/images/projects/fieldvoice.svg",
+      "hero": {
+        "src": "assets/images/projects/fieldvoice-hero.jpg",
+        "alt": "fieldvoice — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "cuped",
+      "category": "Experimentation",
+      "description": "A CUPED variance-reduction library for A/B tests that refuses covariates measured after randomisation, using a declared-window check plus a balance test across arms.",
+      "highlights": [
+        "Valid pre-period covariate removes 38.7% of variance: an 11-week test becomes a 7-week one",
+        "Blocks a post-treatment covariate that removes 98.3% of variance but returns an effect of -6.601 against a true 1.80",
+        "Seeded run on 30,000 synthetic customers with heavy-tailed revenue"
+      ],
+      "technologies": [
+        "Python",
+        "A/B Testing",
+        "Variance Reduction",
+        "Statistical Inference",
+        "unittest",
+        "GitHub Actions"
+      ],
+      "links": {
+        "source": "https://github.com/Vengaiahmadineni/cuped"
+      },
+      "image": "assets/images/projects/cuped.svg",
+      "hero": {
+        "src": "assets/images/projects/cuped-hero.jpg",
+        "alt": "cuped — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "mixpriors",
+      "category": "Bayesian modeling",
+      "description": "A Bayesian media mix model with informative adstock and Hill saturation priors and a hand-written Metropolis-Hastings sampler. Its budget optimiser maximises expected return across all posterior draws.",
+      "highlights": [
+        "9/9 true channel values inside their 90% intervals on 156 weeks of synthetic data",
+        "Posterior-aware plan scores +2.77% on the true curves versus -1.18% for the point-estimate shortcut",
+        "Browser lab deployed to GitHub Pages for risk-penalised allocation"
+      ],
+      "technologies": [
+        "Python",
+        "Bayesian Inference",
+        "MCMC",
+        "JavaScript",
+        "unittest",
+        "GitHub Pages"
+      ],
+      "links": {
+        "source": "https://github.com/Vengaiahmadineni/mixpriors",
+        "demo": "https://Vengaiahmadineni.github.io/mixpriors/"
+      },
+      "image": "assets/images/projects/mixpriors.svg",
+      "hero": {
+        "src": "assets/images/projects/mixpriors-hero.jpg",
+        "alt": "mixpriors — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "geolift",
+      "category": "Causal inference",
+      "description": "Geo incrementality testing by synthetic control with a pre-period fit gate and placebo inference, plus a browser demo of the gate-then-placebo decision.",
+      "highlights": [
+        "Estimates +4.28% lift against a planted 4.0%, where a before/after comparison reports -22.3%",
+        "Refuses fits whose pre-period RMSE exceeds 5.5% of scale and lifts below the detection floor",
+        "Placebo inference over 15 donors gives p = 0.062"
+      ],
+      "technologies": [
+        "Python",
+        "Synthetic Control",
+        "FISTA",
+        "Placebo Inference",
+        "JavaScript",
+        "GitHub Pages"
+      ],
+      "links": {
+        "source": "https://github.com/Vengaiahmadineni/geolift",
+        "demo": "https://Vengaiahmadineni.github.io/geolift/"
+      },
+      "image": "assets/images/projects/geolift.svg",
+      "hero": {
+        "src": "assets/images/projects/geolift-hero.jpg",
+        "alt": "geolift — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "metricregistry",
+      "category": "Analytics engineering",
+      "description": "A KPI registry where each metric is stored as versioned, executable SQL with an owner and grain, and a divergence monitor alerts when metrics meant to match drift apart.",
+      "highlights": [
+        "Flags three enrolment definitions up to 6.80% apart against a 0.50% tolerance",
+        "Stays silent when definitions agree, as with two application counts of 17,100",
+        "16 tests check definitions against independent ground-truth counts"
+      ],
+      "technologies": [
+        "Python",
+        "SQL",
+        "SQLite",
+        "Data Lineage",
+        "unittest",
+        "GitHub Actions"
+      ],
+      "links": {
+        "source": "https://github.com/Vengaiahmadineni/metricregistry"
+      },
+      "image": "assets/images/projects/metricregistry.svg",
+      "hero": {
+        "src": "assets/images/projects/metricregistry-hero.jpg",
+        "alt": "metricregistry — Concept render",
+        "caption": "Concept render"
+      }
+    },
+    {
+      "name": "surgecapacity",
+      "category": "Simulation",
+      "description": "A discrete-event simulation of emergency department staffing across five triage categories and seasonal demand, reporting p95 wait and breach probability instead of the mean, validated against closed-form M/M/c results.",
+      "highlights": [
+        "Demand-shaped roster cuts p95 wait from 4.42h to 2.05h on the same 1,512 clinician-hours per week",
+        "A 25% surge lifts the four-hour breach rate from 6.4% to 14.9% on the flat roster",
+        "Simulator validated against analytic Erlang C wait quantiles"
+      ],
+      "technologies": [
+        "Python",
+        "Discrete-Event Simulation",
+        "Queueing Theory",
+        "Poisson Processes",
+        "unittest",
+        "GitHub Actions"
+      ],
+      "links": {
+        "source": "https://github.com/Vengaiahmadineni/surgecapacity"
+      },
+      "image": "assets/images/projects/surgecapacity.svg",
+      "hero": {
+        "src": "assets/images/projects/surgecapacity-hero.jpg",
+        "alt": "surgecapacity — Concept render",
+        "caption": "Concept render"
+      }
+    }
+  ]
+}

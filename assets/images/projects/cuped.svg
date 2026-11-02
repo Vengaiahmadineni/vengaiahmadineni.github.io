@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+<title>PN-05 cuped: data flow</title>
+<desc>A synthetic experiment and a covariate declaration feed a validation gate. A passed gate, or a recorded override, leads to the CUPED estimate and a readout. A rejected gate raises GateRejection. Ranking keeps rejected candidates.</desc>
+<defs>
+<pattern id="mi" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#EAF3FB" stroke-opacity="0.05" stroke-width="1"/></pattern>
+<pattern id="ma" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#EAF3FB" stroke-opacity="0.09" stroke-width="1"/></pattern>
+<marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#EAF3FB" fill-opacity="0.8"/></marker>
+<marker id="ac" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#9FDBFF"/></marker>
+<style>
+text{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;letter-spacing:0.06em;text-transform:uppercase;fill:#EAF3FB;text-anchor:middle}
+.t{font-size:10px}
+.s{font-size:9px;fill-opacity:0.7}
+.n{font-size:11px;fill:#9FDBFF}
+.b{fill:#0D3B66;stroke:#EAF3FB;stroke-opacity:0.7;stroke-width:1}
+.k{fill:#0D3B66;stroke:#9FDBFF;stroke-width:1}
+.l{fill:none;stroke:#EAF3FB;stroke-opacity:0.7;stroke-width:1}
+.a{fill:none;stroke:#9FDBFF;stroke-width:1}
+</style>
+</defs>
+<rect width="640" height="360" fill="#0D3B66"/>
+<rect width="640" height="360" fill="url(#mi)"/>
+<rect width="640" height="360" fill="url(#ma)"/>
+
+<rect x="16" y="16" width="608" height="22" class="l"/>
+<text x="26" y="31" class="t" style="text-anchor:start">PN-05 · CUPED · VARIANCE REDUCTION BEHIND A PRE-TREATMENT GATE</text>
+
+<!-- boxes -->
+<rect x="16" y="56" width="116" height="44" class="b"/>
+<text x="74" y="75" class="t">generator.py</text>
+<text x="74" y="90" class="s">synth experiment</text>
+
+<rect x="164" y="56" width="128" height="44" class="k"/>
+<text x="228" y="75" class="t">Experiment</text>
+<text x="228" y="90" class="s">users, arms, effect</text>
+
+<rect x="16" y="146" width="116" height="60" class="b"/>
+<text x="74" y="166" class="t">Covariate</text>
+<text x="74" y="180" class="t">Declaration</text>
+<text x="74" y="194" class="s">window</text>
+
+<rect x="164" y="146" width="128" height="60" class="k"/>
+<text x="228" y="166" class="t">validate.py</text>
+<text x="228" y="180" class="t">gate</text>
+<text x="228" y="194" class="s">window + balance</text>
+
+<rect x="368" y="146" width="116" height="60" class="k"/>
+<text x="426" y="166" class="t">cuped.py</text>
+<text x="426" y="180" class="t">estimate()</text>
+<text x="426" y="194" class="s">pooled theta</text>
+
+<rect x="516" y="146" width="108" height="60" class="k"/>
+<text x="570" y="165" class="t">Readout</text>
+<text x="570" y="179" class="s">naive vs cuped</text>
+<text x="570" y="191" class="s">theta</text>
+<text x="570" y="202" class="s">variance removed</text>
+
+<rect x="164" y="266" width="128" height="44" class="b" stroke-dasharray="4 3"/>
+<text x="228" y="285" class="t">GateRejection</text>
+<text x="228" y="299" class="s">raised, no estimate</text>
+
+<rect x="368" y="266" width="116" height="44" class="b"/>
+<text x="426" y="285" class="t">ranking.py</text>
+<text x="426" y="299" class="s">rank()</text>
+
+<rect x="516" y="276" width="108" height="44" class="b"/>
+<text x="570" y="295" class="t">Ranked list</text>
+<text x="570" y="309" class="s">rejected kept</text>
+
+<!-- number readouts -->
+<rect x="456" y="56" width="80" height="36" class="k"/>
+<text x="496" y="72" class="n">30,000</text>
+<text x="496" y="85" class="s">users</text>
+<rect x="544" y="56" width="80" height="36" class="k"/>
+<text x="584" y="72" class="n">1.80</text>
+<text x="584" y="85" class="s">true effect</text>
+<rect x="516" y="224" width="108" height="34" class="k"/>
+<text x="570" y="238" class="n">38.7%</text>
+<text x="570" y="251" class="s">variance removed</text>
+
+<!-- arrows: key path -->
+<line x1="132" y1="78" x2="164" y2="78" class="a" marker-end="url(#ac)"/>
+<line x1="228" y1="100" x2="228" y2="146" class="a" marker-end="url(#ac)"/>
+<line x1="132" y1="180" x2="164" y2="180" class="a" marker-end="url(#ac)"/>
+<line x1="292" y1="180" x2="368" y2="180" class="a" marker-end="url(#ac)"/>
+<polyline points="292,78 426,78 426,146" class="a" marker-end="url(#ac)"/>
+<line x1="484" y1="176" x2="516" y2="176" class="a" marker-end="url(#ac)"/>
+<line x1="570" y1="206" x2="570" y2="224" class="a" marker-end="url(#ac)"/>
+
+<!-- secondary arrows -->
+<line x1="228" y1="206" x2="228" y2="266" class="l" stroke-dasharray="4 3" marker-end="url(#ar)"/>
+<polyline points="292,200 330,200 330,288 368,288" class="l" marker-end="url(#ar)"/>
+<line x1="484" y1="298" x2="516" y2="298" class="l" marker-end="url(#ar)"/>
+
+<!-- labels -->
+<text x="330" y="160" class="s">passed or</text>
+<text x="330" y="171" class="s">override</text>
+<text x="236" y="240" class="s" style="text-anchor:start">rejected</text>
+<text x="338" y="240" class="s" style="text-anchor:start">verdicts</text>
+<text x="16" y="338" class="s" style="text-anchor:start">estimate() runs the gate first</text>
+</svg>

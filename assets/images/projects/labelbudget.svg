@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <title>PN-02 · labelbudget · schematic</title>
+  <desc>Dataset, strategies and model feed the multi-seed runner. Results go to stats, then report, then demo.</desc>
+  <defs>
+    <pattern id="mn" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#EAF3FB" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <pattern id="mj" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#EAF3FB" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L8 4L0 8z" fill="#EAF3FB" fill-opacity="0.8"/>
+    </marker>
+    <marker id="ac" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L8 4L0 8z" fill="#9FDBFF"/>
+    </marker>
+    <style>
+      text{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;letter-spacing:0.06em;fill:#EAF3FB;text-transform:uppercase;font-size:9px}
+      .n{font-size:11px}
+      .s{fill-opacity:0.7}
+      .a{fill:#9FDBFF}
+      .b{fill:#0D3B66;fill-opacity:0.6;stroke:#EAF3FB;stroke-opacity:0.7;stroke-width:1}
+      .k{fill:#0D3B66;fill-opacity:0.6;stroke:#9FDBFF;stroke-width:1}
+      .l{fill:none;stroke:#EAF3FB;stroke-opacity:0.8;stroke-width:1}
+      .m{fill:none;stroke:#9FDBFF;stroke-width:1}
+      .d{fill:none;stroke:#EAF3FB;stroke-opacity:0.5;stroke-width:1;stroke-dasharray:3 3}
+    </style>
+  </defs>
+
+  <rect width="640" height="360" fill="#0D3B66"/>
+  <rect width="640" height="360" fill="url(#mn)"/>
+  <rect width="640" height="360" fill="url(#mj)"/>
+
+  <!-- title strip -->
+  <rect x="16" y="16" width="608" height="24" class="b" fill-opacity="0.3"/>
+  <text x="26" y="32" class="n">PN-02 · LABELBUDGET · ACTIVE-LEARNING BENCHMARK</text>
+  <text x="614" y="32" text-anchor="end" class="s">SCHEMATIC</text>
+
+  <!-- inputs -->
+  <rect x="16" y="56" width="180" height="64" class="b"/>
+  <text x="26" y="74" class="n">DATASET.PY</text>
+  <text x="26" y="90" class="s">PLANTED LINEAR</text>
+  <text x="26" y="103" class="s">BAYES BOUNDARY</text>
+
+  <rect x="16" y="140" width="180" height="64" class="b"/>
+  <text x="26" y="158" class="n">STRATEGIES.PY</text>
+  <text x="26" y="174" class="s">UNCERTAINTY · MARGIN</text>
+  <text x="26" y="187" class="s">DENSITY · CORE-SET · RANDOM</text>
+
+  <rect x="16" y="224" width="180" height="64" class="b"/>
+  <text x="26" y="242" class="n">MODEL.PY</text>
+  <text x="26" y="258" class="s">L2 LOGISTIC REGRESSION</text>
+  <text x="26" y="271" class="s">NEWTON / IRLS</text>
+
+  <!-- runner -->
+  <rect x="236" y="70" width="144" height="204" class="k"/>
+  <text x="246" y="90" class="n a">RUNNER.PY</text>
+  <text x="246" y="108" class="s">MULTI-SEED</text>
+  <text x="246" y="121" class="s">ACTIVE-LEARNING LOOP</text>
+  <line x1="246" y1="134" x2="370" y2="134" class="d"/>
+  <text x="246" y="150" class="s">LABELS-TO-TARGET</text>
+  <text x="246" y="163" class="s">ACCURACY CURVES</text>
+  <text x="246" y="176" class="s">RANDOM BASELINE</text>
+
+  <!-- right column -->
+  <rect x="440" y="56" width="184" height="64" class="k"/>
+  <text x="450" y="74" class="n a">STATS.PY</text>
+  <text x="450" y="90" class="s">BOOTSTRAP CI · SIGN TEST</text>
+  <text x="450" y="103" class="s">POWER</text>
+
+  <rect x="440" y="140" width="184" height="64" class="k"/>
+  <text x="450" y="158" class="n a">REPORT.PY</text>
+  <text x="450" y="174" class="s">GUARDED COMPARISONS</text>
+  <text x="450" y="187" class="s">BUDGET · COST</text>
+
+  <rect x="440" y="224" width="184" height="64" class="k"/>
+  <text x="450" y="242" class="n a">DEMO.PY</text>
+  <text x="450" y="258" class="s">BENCHMARK REPORT</text>
+
+  <!-- arrows inputs -> runner -->
+  <line x1="196" y1="88" x2="236" y2="88" class="l" marker-end="url(#ar)"/>
+  <line x1="196" y1="172" x2="236" y2="172" class="l" marker-end="url(#ar)"/>
+  <line x1="196" y1="256" x2="236" y2="256" class="l" marker-end="url(#ar)"/>
+
+  <!-- key path -->
+  <line x1="380" y1="88" x2="440" y2="88" class="m" marker-end="url(#ac)"/>
+  <line x1="380" y1="172" x2="440" y2="172" class="m" marker-end="url(#ac)"/>
+  <line x1="532" y1="120" x2="532" y2="140" class="m" marker-end="url(#ac)"/>
+  <line x1="532" y1="204" x2="532" y2="224" class="m" marker-end="url(#ac)"/>
+
+  <!-- readouts -->
+  <line x1="308" y1="274" x2="308" y2="304" class="d"/>
+  <rect x="236" y="304" width="144" height="32" class="b"/>
+  <text x="246" y="324" class="s">SEEDS</text>
+  <text x="370" y="324" text-anchor="end" class="n a">30</text>
+
+  <line x1="532" y1="288" x2="532" y2="304" class="d"/>
+  <rect x="440" y="304" width="184" height="32" class="b"/>
+  <text x="450" y="324" class="s">EXPERT COST</text>
+  <text x="614" y="324" text-anchor="end" class="n a">$90 / HOUR</text>
+</svg>

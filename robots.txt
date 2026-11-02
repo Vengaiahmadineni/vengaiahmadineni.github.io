@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vengaiahmadineni.github.io/sitemap.xml

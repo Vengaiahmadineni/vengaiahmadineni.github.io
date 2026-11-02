@@ -1,0 +1,63 @@
+{
+  "roles": [
+    {
+      "company": "Synchrony",
+      "logo": "assets/images/logos/synchrony.svg",
+      "title": "Financial Data Scientist",
+      "start": "Feb 2025",
+      "end": "Present",
+      "location": "USA",
+      "description": "Develop and deploy machine learning and statistical models in Python and Scikit-learn across customer, account, transaction and operational datasets of 300K+ records.",
+      "highlights": [
+        "Build predictive models for customer behavior, risk, credit, fraud and retention, supporting 8+ business use cases across financial and customer analytics.",
+        "Improved selected model performance by approximately 15% through hyperparameter tuning, cross-validation and error analysis, evaluating with precision, recall, F1-score, ROC-AUC, RMSE and MAE.",
+        "Improved analytical data quality by 18% through structured preprocessing, missing-value treatment and validation during EDA and feature engineering.",
+        "Use SQL to create reusable analytical datasets and feature pipelines, reducing recurring data preparation effort by 20% across 6+ machine learning workflows.",
+        "Apply XGBoost, classification, clustering and supervised/unsupervised learning across 12+ modeling experiments using behavioral and transactional features."
+      ],
+      "technologies": [
+        "Python",
+        "SQL",
+        "Scikit-learn",
+        "XGBoost",
+        "Machine Learning",
+        "Statistical Modeling",
+        "EDA",
+        "Feature Engineering",
+        "Classification",
+        "Clustering",
+        "Cross-Validation",
+        "Hyperparameter Tuning"
+      ]
+    },
+    {
+      "company": "Cybage Software",
+      "logo": "assets/images/logos/cybage-software.svg",
+      "title": "AI/ML Data Scientist",
+      "start": "Jan 2021",
+      "end": "Jul 2023",
+      "location": "India",
+      "description": "Developed machine learning and statistical models for business, customer and operational analytics on datasets of 150K+ records across multiple analytical initiatives.",
+      "highlights": [
+        "Built supervised and unsupervised models using Scikit-learn, XGBoost, Random Forest and Gradient Boosting, evaluating 10+ model configurations across business use cases.",
+        "Improved selected model performance by approximately 12% across iterative experiments through hyperparameter tuning, cross-validation, model evaluation and error analysis.",
+        "Reduced recurring data preparation time by 15% through reusable Python and SQL workflows for cleaning, preprocessing, EDA and feature engineering.",
+        "Applied feature selection, transformation, encoding, scaling and dimensionality reduction across 20+ candidate variables to improve model inputs.",
+        "Used SQL, Python, Matplotlib and Seaborn for analytical datasets, visualizations and customer segmentation across 6+ recurring analytical workflows."
+      ],
+      "technologies": [
+        "Python",
+        "SQL",
+        "Scikit-learn",
+        "XGBoost",
+        "Random Forest",
+        "Gradient Boosting",
+        "Matplotlib",
+        "Seaborn",
+        "Statistical Analysis",
+        "Feature Engineering",
+        "Customer Segmentation"
+      ]
+    }
+  ]
+}

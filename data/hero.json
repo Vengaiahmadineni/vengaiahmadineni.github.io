@@ -1,0 +1,46 @@
+{
+  "name": "Vengaiah Madineni",
+  "title": "Data Scientist · Machine Learning & Predictive Modeling",
+  "summary": "Data Scientist with 4+ years of experience developing machine learning and statistical solutions across financial services, customer analytics and behavioral analytics. I build predictive models for customer behavior, risk, fraud and retention with Python, SQL, Scikit-learn and XGBoost. I partner with stakeholders to turn complex data into actionable insight and production-ready models.",
+  "location": "Arlington, TX",
+  "readouts": [
+    {
+      "value": "4+ yrs",
+      "label": "building ML and statistical models"
+    },
+    {
+      "value": "300K+",
+      "label": "records modeled at Synchrony"
+    },
+    {
+      "value": "~15%",
+      "label": "model performance gain from tuning"
+    },
+    {
+      "value": "20%",
+      "label": "less recurring data preparation effort"
+    }
+  ],
+  "ctas": [
+    {
+      "label": "View projects",
+      "href": "#projects",
+      "kind": "primary"
+    },
+    {
+      "label": "Resume",
+      "href": "assets/files/vengaiah-madineni-resume.pdf",
+      "kind": "resume"
+    },
+    {
+      "label": "Get in touch",
+      "href": "#contact",
+      "kind": "secondary"
+    }
+  ],
+  "social": {
+    "github": "https://github.com/Vengaiahmadineni",
+    "email": "vengaiahchowdarymadineni@gmail.com",
+    "phone": "706-908-7565"
+  }
+}

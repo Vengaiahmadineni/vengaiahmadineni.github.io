@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace">
+<title>PN-08 metricregistry architecture</title>
+<desc>Blueprint: fixtures load a student cohort into in-memory SQLite. The Registry of versioned MetricDefinitions and SQLite feed evaluate(), which drives check_divergence() and definition_changes(). lineage_of() reads the Registry. All three feed the demo report.</desc>
+<defs>
+<pattern id="g" width="80" height="80" patternUnits="userSpaceOnUse">
+<path d="M16 0V80M32 0V80M48 0V80M64 0V80M0 16H80M0 32H80M0 48H80M0 64H80" stroke="#EAF3FB" stroke-opacity="0.05" stroke-width="1" fill="none"/>
+<path d="M0 0H80M0 0V80" stroke="#EAF3FB" stroke-opacity="0.09" stroke-width="1" fill="none"/>
+</pattern>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#EAF3FB" fill-opacity="0.8"/></marker>
+<marker id="k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9FDBFF"/></marker>
+<style>
+text{fill:#EAF3FB;letter-spacing:0.06em;text-transform:uppercase}
+.t{font-size:10px;text-anchor:middle}
+.s{font-size:9px;text-anchor:middle;fill-opacity:0.7}
+.b{fill:#0D3B66;stroke:#EAF3FB;stroke-opacity:0.7;stroke-width:1}
+.l{fill:none;stroke:#EAF3FB;stroke-opacity:0.6;stroke-width:1}
+.h{fill:none;stroke:#9FDBFF;stroke-width:1}
+.v{font-size:11px;fill:#9FDBFF;text-anchor:middle}
+</style>
+</defs>
+<rect width="640" height="360" fill="#0D3B66"/>
+<rect width="640" height="360" fill="url(#g)"/>
+
+<rect x="16" y="16" width="608" height="20" fill="#0D3B66" stroke="#EAF3FB" stroke-opacity="0.6"/>
+<text x="26" y="30" style="font-size:10px">PN-08 · METRICREGISTRY · EXECUTABLE KPI DEFINITIONS + DIVERGENCE MONITOR</text>
+
+<!-- connectors -->
+<polyline class="h" points="70,104 70,136" marker-end="url(#k)"/>
+<polyline class="h" points="124,160 164,160" marker-end="url(#k)"/>
+<polyline class="h" points="214,136 214,80 304,80" marker-end="url(#k)"/>
+<polyline class="h" points="452,80 500,80" marker-end="url(#k)"/>
+<polyline class="l" points="264,160 304,160" marker-end="url(#a)"/>
+<polyline class="l" points="452,160 500,160" marker-end="url(#a)"/>
+<polyline class="l" points="124,240 304,240" marker-end="url(#a)"/>
+<polyline class="l" points="214,240 214,184" marker-end="url(#a)"/>
+<polyline class="l" points="452,240 500,240" marker-end="url(#a)"/>
+<circle cx="214" cy="240" r="2.5" fill="#EAF3FB"/>
+
+<!-- column 1 -->
+<rect class="b" x="16" y="56" width="108" height="48"/>
+<text class="t" x="70" y="76">FIXTURES.PY</text>
+<text class="s" x="70" y="90">STUDENT COHORT</text>
+<text class="s" x="70" y="100">+ GROUND TRUTH</text>
+
+<rect class="b" x="16" y="136" width="108" height="48"/>
+<ellipse cx="70" cy="144" rx="30" ry="4" fill="none" stroke="#EAF3FB" stroke-opacity="0.5"/>
+<text class="t" x="70" y="162">SQLITE</text>
+<text class="s" x="70" y="176">IN-MEMORY</text>
+
+<rect class="b" x="16" y="216" width="108" height="48"/>
+<text class="t" x="70" y="236">REGISTRY</text>
+<text class="s" x="70" y="250">VERSIONED</text>
+<text class="s" x="70" y="260">METRICDEFINITIONS</text>
+
+<!-- column 2 -->
+<rect class="b" x="164" y="136" width="100" height="48" stroke="#9FDBFF" stroke-opacity="1"/>
+<text class="t" x="214" y="157">EVALUATE()</text>
+<text class="s" x="214" y="172">RUN SQL → VALUE</text>
+
+<!-- column 3 -->
+<rect class="b" x="304" y="56" width="148" height="48" stroke="#9FDBFF" stroke-opacity="1"/>
+<text class="t" x="378" y="77">CHECK_DIVERGENCE()</text>
+<text class="s" x="378" y="92">PAIRWISE BY SUBJECT</text>
+
+<rect class="b" x="304" y="136" width="148" height="48"/>
+<text class="t" x="378" y="157">DEFINITION_CHANGES()</text>
+<text class="s" x="378" y="172">OLD VS NEW VERSION</text>
+
+<rect class="b" x="304" y="216" width="148" height="48"/>
+<text class="t" x="378" y="237">LINEAGE_OF()</text>
+<text class="s" x="378" y="252">COLUMNS READ</text>
+
+<!-- column 4 -->
+<rect class="b" x="500" y="56" width="124" height="208" stroke="#9FDBFF" stroke-opacity="1"/>
+<text class="t" x="562" y="150">DEMO.PY</text>
+<text class="s" x="562" y="166">REPORT</text>
+
+<!-- readouts -->
+<rect class="b" x="16" y="296" width="180" height="34" stroke="#9FDBFF" stroke-opacity="1"/>
+<text class="s" x="106" y="308">MAX GAP · ENROLLED_STUDENTS</text>
+<text class="v" x="106" y="323">6.80% APART</text>
+
+<rect class="b" x="230" y="296" width="180" height="34"/>
+<text class="s" x="320" y="308">PER-PAIR THRESHOLD</text>
+<text class="v" x="320" y="323">0.50% TOLERANCE</text>
+
+<rect class="b" x="444" y="296" width="180" height="34"/>
+<text class="s" x="534" y="308">TEST SUITE</text>
+<text class="v" x="534" y="323">16 TESTS</text>
+</svg>

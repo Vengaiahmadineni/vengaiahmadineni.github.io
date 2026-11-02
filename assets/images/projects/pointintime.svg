@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+<title>PN-01 pointintime: bitemporal feature store architecture</title>
+<desc>Synthetic lending generator feeds a bitemporal SQLite PointInTimeStore. as_of(label_time) feeds the FeatureRegistry, which takes findings from a static leakage detector and gates training_matrix into a logistic regression model. A fact stream goes to a StreamingMaterializer and OnlineStore, and offline and online values meet in a skew check.</desc>
+<defs>
+<pattern id="gm" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#EAF3FB" stroke-opacity="0.05" stroke-width="1"/></pattern>
+<pattern id="gM" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#EAF3FB" stroke-opacity="0.09" stroke-width="1"/></pattern>
+<marker id="aw" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8z" fill="#EAF3FB" fill-opacity="0.8"/></marker>
+<marker id="ac" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto"><path d="M0 0L8 4L0 8z" fill="#9FDBFF"/></marker>
+<style>
+text{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;letter-spacing:0.06em;fill:#EAF3FB}
+.t{font-size:10px}
+.s{font-size:9px;fill-opacity:0.7}
+.a{fill:#9FDBFF;font-size:10px}
+.b{fill:none;stroke:#EAF3FB;stroke-opacity:0.7;stroke-width:1}
+.k{fill:none;stroke:#9FDBFF;stroke-width:1}
+.l{fill:none;stroke:#EAF3FB;stroke-opacity:0.6;stroke-width:1}
+</style>
+</defs>
+<rect width="640" height="360" fill="#0D3B66"/>
+<rect width="640" height="360" fill="url(#gm)"/>
+<rect width="640" height="360" fill="url(#gM)"/>
+
+<rect x="16" y="16" width="608" height="20" class="b"/>
+<text x="24" y="30" class="t">PN-01 · POINTINTIME · BITEMPORAL FEATURE STORE</text>
+<text x="616" y="30" class="s" text-anchor="end">SCHEMATIC</text>
+
+<rect x="16" y="46" width="192" height="40" class="k"/>
+<text x="24" y="63" class="a">AUC LEAKY OFFLINE  0.912</text>
+<text x="24" y="78" class="a">AUC PRODUCTION     0.654</text>
+<line x1="208" y1="66" x2="240" y2="66" class="l" stroke-dasharray="3 3"/>
+
+<rect x="240" y="46" width="140" height="40" class="b"/>
+<text x="250" y="62" class="t">MODEL</text>
+<text x="250" y="76" class="s">LOGISTIC REGRESSION</text>
+
+<rect x="496" y="46" width="128" height="40" class="b"/>
+<text x="504" y="62" class="t">LEAKAGE DETECTOR</text>
+<text x="504" y="76" class="s">STATIC AUDIT</text>
+
+<rect x="16" y="120" width="120" height="52" class="b"/>
+<text x="24" y="140" class="t">GENERATOR</text>
+<text x="24" y="154" class="s">SYNTHETIC LENDING</text>
+<text x="24" y="165" class="s">PLANTED LEAK</text>
+
+<rect x="200" y="120" width="140" height="52" class="k"/>
+<text x="208" y="140" class="t">POINTINTIMESTORE</text>
+<text x="208" y="154" class="s">SQLITE · BITEMPORAL</text>
+
+<rect x="456" y="120" width="168" height="52" class="k"/>
+<text x="464" y="140" class="t">FEATUREREGISTRY</text>
+<text x="464" y="154" class="s">DEFINITIONS + SERVING GATE</text>
+
+<rect x="16" y="250" width="120" height="52" class="b"/>
+<text x="24" y="267" class="t">STREAMING</text>
+<text x="24" y="279" class="t">MATERIALIZER</text>
+<text x="24" y="293" class="s">WATERMARK</text>
+
+<rect x="200" y="250" width="140" height="52" class="b"/>
+<text x="208" y="271" class="t">ONLINESTORE</text>
+<text x="208" y="285" class="s">KNOWLEDGE-TIME ORDER</text>
+
+<rect x="456" y="250" width="168" height="52" class="b"/>
+<text x="464" y="271" class="t">SKEW CHECK</text>
+<text x="464" y="285" class="s">OFFLINE VS ONLINE</text>
+
+<line x1="136" y1="146" x2="200" y2="146" class="k" marker-end="url(#ac)"/>
+<line x1="340" y1="146" x2="456" y2="146" class="k" marker-end="url(#ac)"/>
+<text x="398" y="138" class="s" text-anchor="middle" style="fill:#9FDBFF;fill-opacity:1">AS_OF(LABEL_TIME)</text>
+<polyline points="480,120 480,66 380,66" class="k" marker-end="url(#ac)"/>
+<text x="432" y="60" class="s" text-anchor="middle" style="fill:#9FDBFF;fill-opacity:1">TRAINING_MATRIX</text>
+<line x1="560" y1="86" x2="560" y2="120" class="l" marker-end="url(#aw)"/>
+<text x="567" y="106" class="s">FINDINGS</text>
+
+<polyline points="240,172 240,212 76,212 76,250" class="l" marker-end="url(#aw)"/>
+<text x="90" y="206" class="s">FACT STREAM</text>
+<line x1="136" y1="276" x2="200" y2="276" class="l" marker-end="url(#aw)"/>
+<line x1="340" y1="276" x2="456" y2="276" class="l" marker-end="url(#aw)"/>
+<text x="398" y="268" class="s" text-anchor="middle">ONLINE VALUES</text>
+<line x1="540" y1="172" x2="540" y2="250" class="l" marker-end="url(#aw)"/>
+<text x="534" y="214" class="s" text-anchor="end">OFFLINE VALUES</text>
+
+<line x1="540" y1="302" x2="540" y2="312" class="l"/>
+<rect x="456" y="312" width="168" height="26" class="k"/>
+<text x="464" y="329" class="a">SKEW MISMATCHES 0 / 40000</text>
+
+<text x="16" y="332" class="s">READ API HAS NO KNOWLEDGE-TIME PARAMETER</text>
+</svg>

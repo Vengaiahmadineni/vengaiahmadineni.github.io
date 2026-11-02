@@ -1,0 +1,113 @@
+{
+  "groups": [
+    {
+      "name": "Programming & Data",
+      "items": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "NumPy",
+        "Data Cleaning",
+        "Data Wrangling",
+        "Data Preprocessing",
+        "Data Transformation"
+      ]
+    },
+    {
+      "name": "Machine Learning",
+      "items": [
+        "Scikit-learn",
+        "XGBoost",
+        "Random Forest",
+        "Gradient Boosting",
+        "Supervised Learning",
+        "Unsupervised Learning",
+        "Classification",
+        "Clustering",
+        "Predictive Modeling"
+      ]
+    },
+    {
+      "name": "Model Development & Evaluation",
+      "items": [
+        "Model Training",
+        "Cross-Validation",
+        "Hyperparameter Tuning",
+        "Error Analysis",
+        "Model Comparison",
+        "Model Calibration",
+        "Precision / Recall",
+        "F1-Score",
+        "ROC-AUC",
+        "RMSE",
+        "MAE"
+      ]
+    },
+    {
+      "name": "Feature Engineering",
+      "items": [
+        "Feature Selection",
+        "Feature Transformation",
+        "Encoding",
+        "Scaling",
+        "Dimensionality Reduction",
+        "Missing Value Treatment",
+        "Outlier Analysis",
+        "Data Quality Analysis"
+      ]
+    },
+    {
+      "name": "Statistical Analysis",
+      "items": [
+        "Statistical Modeling",
+        "Hypothesis Testing",
+        "Correlation Analysis",
+        "Trend Analysis",
+        "Cohort Analysis",
+        "Segmentation",
+        "Anomaly Detection",
+        "Behavioral Analysis"
+      ]
+    },
+    {
+      "name": "ML Workflows & Delivery",
+      "items": [
+        "EDA",
+        "Reusable Feature Pipelines",
+        "Statistical Experimentation",
+        "Model Deployment",
+        "Model Monitoring",
+        "Model Retraining",
+        "Production Validation",
+        "Data Validation",
+        "Code Reviews",
+        "Agile / Scrum"
+      ]
+    },
+    {
+      "name": "Analytics",
+      "items": [
+        "Customer Analytics",
+        "Transaction Analytics",
+        "Risk Analytics",
+        "Fraud Analytics",
+        "Retention Analytics",
+        "Portfolio Analytics",
+        "Operational Analytics",
+        "Customer Segmentation"
+      ]
+    },
+    {
+      "name": "Visualization & Collaboration",
+      "items": [
+        "Matplotlib",
+        "Seaborn",
+        "Data Visualization",
+        "Analytical Reporting",
+        "Stakeholder Communication",
+        "Cross-Functional Collaboration",
+        "Analytical Storytelling"
+      ]
+    }
+  ]
+}

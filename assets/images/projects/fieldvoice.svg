@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img">
+<title>PN-04 fieldvoice pipeline schematic</title>
+<desc>Blueprint of the fieldvoice pipeline: generator.py feeds the simulated asr.py AsrBackend, then entities.py typed extraction (optionally via the decoding.py catalog-constrained pass), then metrics.py, then demo.py ranking flip. Readouts show WER 0.192 vs 0.231, entity error rate 0.833 vs 0.000, and 80 tests.</desc>
+<defs>
+<style>
+text{font-family:"IBM Plex Mono",SFMono-Regular,Consolas,monospace;letter-spacing:0.06em;text-transform:uppercase;fill:#EAF3FB}
+.n{font-size:10px}
+.s{font-size:9px;opacity:0.7}
+.v{font-size:11px;fill:#9FDBFF}
+.b{fill:none;stroke:#EAF3FB;stroke-opacity:0.7;stroke-width:1}
+.k{fill:none;stroke:#9FDBFF;stroke-width:1}
+.d{fill:none;stroke:#EAF3FB;stroke-opacity:0.6;stroke-width:1;stroke-dasharray:4 3}
+</style>
+<pattern id="mn" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#EAF3FB" stroke-opacity="0.05" stroke-width="1"/></pattern>
+<pattern id="mj" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" fill="none" stroke="#EAF3FB" stroke-opacity="0.09" stroke-width="1"/></pattern>
+<marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#EAF3FB" fill-opacity="0.8"/></marker>
+<marker id="aa" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8z" fill="#9FDBFF"/></marker>
+</defs>
+<rect width="640" height="360" fill="#0D3B66"/>
+<rect width="640" height="360" fill="url(#mn)"/>
+<rect width="640" height="360" fill="url(#mj)"/>
+
+<rect class="b" x="16" y="16" width="608" height="20"/>
+<text class="n" x="24" y="30">PN-04 · FIELDVOICE · FIELD REPORT ENTITY EVALUATION</text>
+<text class="s" x="616" y="30" text-anchor="end">STDLIB ONLY · OFFLINE</text>
+
+<g>
+<rect class="k" x="16" y="84" width="104" height="56"/>
+<text class="n" x="68" y="102" text-anchor="middle">generator.py</text>
+<text class="s" x="68" y="116" text-anchor="middle">Synthetic rpts</text>
+<text class="s" x="68" y="128" text-anchor="middle">+ planted ent.</text>
+
+<rect class="k" x="142" y="84" width="104" height="56"/>
+<text class="n" x="194" y="102" text-anchor="middle">asr.py</text>
+<text class="s" x="194" y="116" text-anchor="middle">AsrBackend</text>
+<text class="s" x="194" y="128" text-anchor="middle">(simulated)</text>
+
+<rect class="k" x="268" y="84" width="104" height="56"/>
+<text class="n" x="320" y="102" text-anchor="middle">entities.py</text>
+<text class="s" x="320" y="116" text-anchor="middle">Typed</text>
+<text class="s" x="320" y="128" text-anchor="middle">extraction</text>
+
+<rect class="k" x="394" y="84" width="104" height="56"/>
+<text class="n" x="446" y="102" text-anchor="middle">metrics.py</text>
+<text class="s" x="446" y="116" text-anchor="middle">WER + entity</text>
+<text class="s" x="446" y="128" text-anchor="middle">error rate</text>
+
+<rect class="k" x="520" y="84" width="104" height="56"/>
+<text class="n" x="572" y="102" text-anchor="middle">demo.py</text>
+<text class="s" x="572" y="116" text-anchor="middle">Ranking flip</text>
+<text class="s" x="572" y="128" text-anchor="middle">+ tables</text>
+</g>
+
+<g>
+<line class="k" x1="120" y1="112" x2="142" y2="112" marker-end="url(#aa)"/>
+<line class="k" x1="246" y1="112" x2="268" y2="112" marker-end="url(#aa)"/>
+<line class="k" x1="372" y1="112" x2="394" y2="112" marker-end="url(#aa)"/>
+<line class="k" x1="498" y1="112" x2="520" y2="112" marker-end="url(#aa)"/>
+</g>
+
+<g>
+<rect class="b" x="212" y="168" width="90" height="48" stroke-dasharray="4 3"/>
+<text class="n" x="257" y="184" text-anchor="middle">decoding.py</text>
+<text class="s" x="257" y="196" text-anchor="middle">Catalog-</text>
+<text class="s" x="257" y="207" text-anchor="middle">constrained</text>
+<polyline class="d" points="194,140 194,192 212,192" marker-end="url(#ah)"/>
+<polyline class="d" points="302,192 320,192 320,140" marker-end="url(#ah)"/>
+<text class="s" x="257" y="232" text-anchor="middle">Optional pass</text>
+</g>
+
+<g>
+<line class="b" x1="572" y1="140" x2="572" y2="168"/>
+<rect class="b" x="394" y="168" width="230" height="48"/>
+<text class="s" x="406" y="188">WER prefers system A</text>
+<text class="s" x="406" y="204">Entity error rate prefers B</text>
+</g>
+
+<text class="s" x="16" y="262">Readouts · demo utterance, systems A / B</text>
+
+<g>
+<rect class="b" x="16" y="270" width="190" height="52"/>
+<text class="s" x="26" y="286">Word error rate</text>
+<text class="v" x="26" y="306">0.192 / 0.231</text>
+
+<rect class="k" x="225" y="270" width="190" height="52"/>
+<text class="s" x="235" y="286">Entity error rate</text>
+<text class="v" x="235" y="306">0.833 / 0.000</text>
+
+<rect class="b" x="434" y="270" width="190" height="52"/>
+<text class="s" x="444" y="286">Test suite</text>
+<text class="v" x="444" y="306">80 tests</text>
+</g>
+</svg>

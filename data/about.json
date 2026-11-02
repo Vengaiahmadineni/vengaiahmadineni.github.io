@@ -1,0 +1,34 @@
+{
+  "paragraphs": [
+    "I am a Data Scientist who develops and deploys machine learning and statistical models, working from exploratory analysis and feature engineering through validation, deployment and monitoring.",
+    "At Synchrony I build predictive models for customer behavior, risk, credit, fraud and retention across datasets of 300K+ records, supporting 8+ business use cases across financial and customer analytics.",
+    "My strongest results come from careful modeling: about 15% better performance on selected models through hyperparameter tuning, cross-validation and error analysis, and 18% better analytical data quality through structured preprocessing and validation.",
+    "Before Synchrony, I spent two and a half years at Cybage Software building supervised and unsupervised models, and I hold an M.S. in Applied Statistics and Data Science from the University of Texas at Arlington."
+  ],
+  "highlights": [
+    {
+      "label": "Discipline",
+      "value": "Data Science & Machine Learning"
+    },
+    {
+      "label": "Current employer",
+      "value": "Synchrony"
+    },
+    {
+      "label": "Base",
+      "value": "Arlington, TX"
+    },
+    {
+      "label": "Experience",
+      "value": "4+ years"
+    },
+    {
+      "label": "Degree",
+      "value": "M.S. Applied Statistics and Data Science, UT Arlington"
+    },
+    {
+      "label": "Core stack",
+      "value": "Python, SQL, Scikit-learn, XGBoost"
+    }
+  ]
+}
